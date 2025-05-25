@@ -1,0 +1,43 @@
+﻿.article-container {
+    max-width: 850px;
+    margin: auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.article-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.category-label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.article-content p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.related-item h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #000;
+}
+
+.comment-item {
+    background-color: #f8f9fa;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.comments-section input {
+    border-radius: 8px;
+    padding: 10px;
+}

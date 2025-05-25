@@ -1,0 +1,230 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\LapTrinhWebNC\\BTLweb\\BTLweb\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BF32A37E-7404-4167-919E-F2CD197F0210}|BTLweb\\BTLweb.csproj|d:\\laptrinhwebnc\\btlweb\\btlweb\\btlweb\\repositories\\genericfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF32A37E-7404-4167-919E-F2CD197F0210}|BTLweb\\BTLweb.csproj|solutionrelative:btlweb\\repositories\\genericfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF32A37E-7404-4167-919E-F2CD197F0210}|BTLweb\\BTLweb.csproj|d:\\laptrinhwebnc\\btlweb\\btlweb\\btlweb\\repositories\\igenericfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF32A37E-7404-4167-919E-F2CD197F0210}|BTLweb\\BTLweb.csproj|solutionrelative:btlweb\\repositories\\igenericfunction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF32A37E-7404-4167-919E-F2CD197F0210}|BTLweb\\BTLweb.csproj|d:\\laptrinhwebnc\\btlweb\\btlweb\\btlweb\\viewmodels\\uservm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF32A37E-7404-4167-919E-F2CD197F0210}|BTLweb\\BTLweb.csproj|solutionrelative:btlweb\\viewmodels\\uservm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF32A37E-7404-4167-919E-F2CD197F0210}|BTLweb\\BTLweb.csproj|d:\\laptrinhwebnc\\btlweb\\btlweb\\btlweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF32A37E-7404-4167-919E-F2CD197F0210}|BTLweb\\BTLweb.csproj|solutionrelative:btlweb\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF32A37E-7404-4167-919E-F2CD197F0210}|BTLweb\\BTLweb.csproj|d:\\laptrinhwebnc\\btlweb\\btlweb\\btlweb\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF32A37E-7404-4167-919E-F2CD197F0210}|BTLweb\\BTLweb.csproj|solutionrelative:btlweb\\viewmodels\\homeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF32A37E-7404-4167-919E-F2CD197F0210}|BTLweb\\BTLweb.csproj|d:\\laptrinhwebnc\\btlweb\\btlweb\\btlweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF32A37E-7404-4167-919E-F2CD197F0210}|BTLweb\\BTLweb.csproj|solutionrelative:btlweb\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF32A37E-7404-4167-919E-F2CD197F0210}|BTLweb\\BTLweb.csproj|d:\\laptrinhwebnc\\btlweb\\btlweb\\btlweb\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF32A37E-7404-4167-919E-F2CD197F0210}|BTLweb\\BTLweb.csproj|solutionrelative:btlweb\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF32A37E-7404-4167-919E-F2CD197F0210}|BTLweb\\BTLweb.csproj|d:\\laptrinhwebnc\\btlweb\\btlweb\\btlweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BF32A37E-7404-4167-919E-F2CD197F0210}|BTLweb\\BTLweb.csproj|solutionrelative:btlweb\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF32A37E-7404-4167-919E-F2CD197F0210}|BTLweb\\BTLweb.csproj|d:\\laptrinhwebnc\\btlweb\\btlweb\\btlweb\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF32A37E-7404-4167-919E-F2CD197F0210}|BTLweb\\BTLweb.csproj|solutionrelative:btlweb\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BF32A37E-7404-4167-919E-F2CD197F0210}|BTLweb\\BTLweb.csproj|d:\\laptrinhwebnc\\btlweb\\btlweb\\btlweb\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BF32A37E-7404-4167-919E-F2CD197F0210}|BTLweb\\BTLweb.csproj|solutionrelative:btlweb\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0174dea2-fdbe-4ef1-8f99-c0beae78880f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IGenericFunction.cs",
+              "DocumentMoniker": "D:\\LapTrinhWebNC\\BTLweb\\BTLweb\\BTLweb\\Repositories\\IGenericFunction.cs",
+              "RelativeDocumentMoniker": "BTLweb\\Repositories\\IGenericFunction.cs",
+              "ToolTip": "D:\\LapTrinhWebNC\\BTLweb\\BTLweb\\BTLweb\\Repositories\\IGenericFunction.cs",
+              "RelativeToolTip": "BTLweb\\Repositories\\IGenericFunction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T02:42:07.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GenericFunction.cs",
+              "DocumentMoniker": "D:\\LapTrinhWebNC\\BTLweb\\BTLweb\\BTLweb\\Repositories\\GenericFunction.cs",
+              "RelativeDocumentMoniker": "BTLweb\\Repositories\\GenericFunction.cs",
+              "ToolTip": "D:\\LapTrinhWebNC\\BTLweb\\BTLweb\\BTLweb\\Repositories\\GenericFunction.cs",
+              "RelativeToolTip": "BTLweb\\Repositories\\GenericFunction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T00:40:58.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserVM.cs",
+              "DocumentMoniker": "D:\\LapTrinhWebNC\\BTLweb\\BTLweb\\BTLweb\\ViewModels\\UserVM.cs",
+              "RelativeDocumentMoniker": "BTLweb\\ViewModels\\UserVM.cs",
+              "ToolTip": "D:\\LapTrinhWebNC\\BTLweb\\BTLweb\\BTLweb\\ViewModels\\UserVM.cs",
+              "RelativeToolTip": "BTLweb\\ViewModels\\UserVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T01:41:31.921Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\LapTrinhWebNC\\BTLweb\\BTLweb\\BTLweb\\Program.cs",
+              "RelativeDocumentMoniker": "BTLweb\\Program.cs",
+              "ToolTip": "D:\\LapTrinhWebNC\\BTLweb\\BTLweb\\BTLweb\\Program.cs",
+              "RelativeToolTip": "BTLweb\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T02:49:20.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\LapTrinhWebNC\\BTLweb\\BTLweb\\BTLweb\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "BTLweb\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\LapTrinhWebNC\\BTLweb\\BTLweb\\BTLweb\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "BTLweb\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T01:00:46.221Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\LapTrinhWebNC\\BTLweb\\BTLweb\\BTLweb\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "BTLweb\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\LapTrinhWebNC\\BTLweb\\BTLweb\\BTLweb\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "BTLweb\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAowEIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-11T01:01:04.585Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\LapTrinhWebNC\\BTLweb\\BTLweb\\BTLweb\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "BTLweb\\Services\\UserService.cs",
+              "ToolTip": "D:\\LapTrinhWebNC\\BTLweb\\BTLweb\\BTLweb\\Services\\UserService.cs",
+              "RelativeToolTip": "BTLweb\\Services\\UserService.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAiwDAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T01:42:55.699Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "D:\\LapTrinhWebNC\\BTLweb\\BTLweb\\BTLweb\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "BTLweb\\Controllers\\LoginController.cs",
+              "ToolTip": "D:\\LapTrinhWebNC\\BTLweb\\BTLweb\\BTLweb\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "BTLweb\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAADsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T02:21:28.288Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "D:\\LapTrinhWebNC\\BTLweb\\BTLweb\\BTLweb\\Services\\IUserService.cs",
+              "RelativeDocumentMoniker": "BTLweb\\Services\\IUserService.cs",
+              "ToolTip": "D:\\LapTrinhWebNC\\BTLweb\\BTLweb\\BTLweb\\Services\\IUserService.cs",
+              "RelativeToolTip": "BTLweb\\Services\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T01:42:27.52Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeViewModel.cs",
+              "DocumentMoniker": "D:\\LapTrinhWebNC\\BTLweb\\BTLweb\\BTLweb\\ViewModels\\HomeViewModel.cs",
+              "RelativeDocumentMoniker": "BTLweb\\ViewModels\\HomeViewModel.cs",
+              "ToolTip": "D:\\LapTrinhWebNC\\BTLweb\\BTLweb\\BTLweb\\ViewModels\\HomeViewModel.cs",
+              "RelativeToolTip": "BTLweb\\ViewModels\\HomeViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-11T01:08:57.084Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 146,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

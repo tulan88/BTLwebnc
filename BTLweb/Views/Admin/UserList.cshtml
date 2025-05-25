@@ -1,0 +1,182 @@
+﻿@model IEnumerable<BTLweb.Models.Users>
+@{
+    ViewData["Title"] = "Quản Lý Người Dùng";
+}
+<link rel="stylesheet" href="~/css/admin.css" asp-append-version="true" />
+
+
+<div class="container">
+    <div class="header-line"></div>
+
+    <!-- Success/Error Messages -->
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["ErrorMessage"]
+        </div>
+    }
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <form asp-action="Search" asp-controller="Admin" method="get">
+            <input type="text" name="searchText" class="search-box" placeholder="Tìm kiếm...">
+            <button type="submit" class="search-btn">Tìm kiếm</button>
+        </form>
+    </div>
+
+    <!-- User Table -->
+    <table class="user-table">
+        <thead>
+            <tr>
+                <th>UserID</th>
+                <th>FullName</th>
+                <th>Birthday</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>State</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.UserID</td>
+                    <td>@user.FullName</td>
+                    <td>@(user.Birthday.HasValue ? user.Birthday.Value.ToString("dd/MM/yyyy") : "-")</td>
+                    <td>@user.Email</td>
+                    <td>@user.Role</td>
+                    <td>@user.State</td>
+                    <td>
+                        <button class="edit-btn"
+                                onclick="showEditForm('@user.UserID', '@user.FullName', '@(user.Birthday.HasValue ? user.Birthday.Value.ToString("yyyy-MM-dd") : "")',
+                                        '@user.Email', '@user.Role', '@user.State')">
+                            Sửa
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="edit-form-container" id="editFormContainer">
+        <h2 class="form-title">SỬA THÔNG TIN NGƯỜI DÙNG</h2>
+
+        <form id="editUserForm" asp-action="EditUser" asp-controller="Admin" method="post">
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="userId">User ID:</label>
+                        <input type="text" class="form-control" id="userId" name="userId" readonly>
+                    </div>
+                </div>
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="fullName">Họ và tên:</label>
+                        <input type="text" class="form-control" id="fullName" name="fullName">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email">
+                    </div>
+                </div>
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="birthday">Ngày sinh:</label>
+                        <input type="date" class="form-control" id="birthday" name="birthday">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="password">Mật khẩu:</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Nhập mật khẩu mới nếu muốn thay đổi">
+                    </div>
+                </div>
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="confirmPassword">Xác nhận mật khẩu:</label>
+                        <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Xác nhận mật khẩu mới">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="role">Vai trò:</label>
+                        <select class="form-select" id="role" name="role">
+                            <option value="0">0 - Người dùng</option>
+                            <option value="1">1 - Quản trị viên</option>
+                            <option value="2">2 - Quản lý</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-column">
+                    <div class="form-group">
+                        <label for="state">Trạng thái:</label>
+                        <select class="form-select" id="state" name="state">
+                            <option value="0">0 - Vô hiệu hóa</option>
+                            <option value="1">1 - Hoạt động</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" class="btn-cancel" onclick="hideEditForm()">Hủy</button>
+                <button type="submit" class="btn-save">Lưu thay đổi</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="footer-line"></div>
+</div>
+
+@section Scripts {
+    <script>
+        // Function to show the edit form and populate with user data
+        function showEditForm(userId, fullName, birthday, email, role, state) {
+            // Populate form fields with user data
+            document.getElementById('userId').value = userId;
+            document.getElementById('fullName').value = fullName;
+            document.getElementById('birthday').value = birthday;
+            document.getElementById('email').value = email;
+
+            // Set select dropdown values
+            document.getElementById('role').value = role;
+            document.getElementById('state').value = state;
+
+            // Clear password fields
+            document.getElementById('password').value = '';
+            document.getElementById('confirmPassword').value = '';
+
+            // Show the form
+            document.getElementById('editFormContainer').style.display = 'block';
+
+            // Scroll to form
+            document.getElementById('editFormContainer').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function hideEditForm() {
+            document.getElementById('editFormContainer').style.display = 'none';
+        }
+
+        // Initially hide the form
+        hideEditForm();
+    </script>
+}

@@ -1,0 +1,40 @@
+﻿@model BTLweb.ViewModels.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/LayoutWithout.cshtml";
+}
+<link rel="stylesheet" href="~/css/auth.css" />
+<script src="~/js/auth.js"></script>
+
+<div class="auth-container">
+    <h2>Đăng nhập</h2>
+
+    @if (ViewData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @ViewData["ErrorMessage"]
+        </div>
+    }
+
+    <form asp-action="Index" method="post" class="auth-form">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="Email">Email:</label>
+            <input asp-for="Email" type="email" class="form-control" placeholder="Nhập email của bạn" required />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="Password">Mật khẩu:</label>
+            <input name="Password" type="password" class="form-control" placeholder="Nhập mật khẩu" required />
+            <span class="text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+        </div>
+
+        <button type="submit" class="btn-auth">Đăng nhập</button>
+
+        <div class="auth-footer">
+            <p>Chưa có tài khoản? <a asp-controller="SignUp" asp-action="Index">Đăng ký ngay</a></p>
+        </div>
+    </form>
+</div>

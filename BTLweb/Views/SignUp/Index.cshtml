@@ -1,0 +1,64 @@
+﻿@model BTLweb.ViewModels.SignUpViewModel
+@{
+    ViewData["Title"] = "Đăng ký tài khoản";
+    Layout = "~/Views/Shared/LayoutWithout.cshtml";
+}
+<link rel="stylesheet" href="~/css/auth.css" asp-append-version="true" />
+
+<div class="auth-container">
+    <h2>Đăng ký</h2>
+
+    @if (ViewData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">
+            @ViewData["ErrorMessage"]
+        </div>
+    }
+
+    <form asp-action="Index" method="post" class="auth-form">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="form-group">
+            <label asp-for="FullName">Họ và tên:</label>
+            <input asp-for="FullName" class="form-control" placeholder="Nhập họ và tên của bạn" required />
+            <span asp-validation-for="FullName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Birthday">Ngày sinh:</label>
+            <input asp-for="Birthday" type="date" class="form-control" />
+            <span asp-validation-for="Birthday" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email">Email:</label>
+            <input asp-for="Email" type="email" class="form-control" placeholder="Nhập email của bạn" required />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="Password">Mật khẩu:</label>
+            <input name="Password" type="password" class="form-control" placeholder="Nhập mật khẩu" required />
+            <span class="text-danger" data-valmsg-for="Password" data-valmsg-replace="true"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="ConfirmPassword">Nhập lại mật khẩu:</label>
+            <input name="ConfirmPassword" type="password" class="form-control" placeholder="Nhập lại mật khẩu" required />
+            <span class="text-danger" data-valmsg-for="ConfirmPassword" data-valmsg-replace="true"></span>
+        </div>
+
+        <button type="submit" class="btn-auth">Đăng ký</button>
+
+        <div class="auth-footer">
+            <p>Đã có tài khoản? <a asp-controller="Login" asp-action="Index">Đăng nhập ngay</a></p>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script src="~/js/auth.js" asp-append-version="true"></script>
+}

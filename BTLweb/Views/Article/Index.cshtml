@@ -1,0 +1,97 @@
+﻿@model BTLweb.Models.Articles
+@{
+    ViewBag.Title = "Chi tiết bài viết";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/css/detail.css" asp-append-version="true" />
+<div class="article-container container mt-5 mb-5">
+    <!-- Danh mục + đăng ký -->
+    <div class="d-flex justify-content-between align-items-center mb-2">
+        <span class="text-muted category-label">@Model.Category.CategoryName</span>
+        <button class="btn btn-outline-dark btn-sm">Đăng ký</button>
+    </div>
+    <!-- Tiêu đề -->
+    <h1 class="article-title">@Model.Title</h1>
+    <div class="text-muted mb-3">@Model.PostedTime.ToString("dd/MM/yyyy HH:mm")</div>
+    <!-- Ảnh -->
+    <img src="@Url.Content("~/" + Model.ImageURL)" class="img-fluid rounded mb-4" alt="@Model.Slug">
+    <!-- Nội dung chính -->
+    <div class="article-content mb-4">
+        @Html.Raw(Model.Content)
+    </div>
+
+    <!-- Tin liên quan -->
+    <h5 class="mb-3">Bài viết cùng chuyên mục</h5>
+    <div class="related-news row g-4 mb-4">
+        @foreach (var relatedArticle in ViewBag.RelatedArticles)
+        {
+            <div class="col-md-6">
+                <div class="related-item d-flex">
+                    <img src="@Url.Content("~/" + relatedArticle.ImageURL)" class="img-thumbnail me-3" width="120" alt="@relatedArticle.Slug">
+                    <div>
+                        <h6 class="mb-1">
+                            <a href="@Url.Action("Index", "Article", new { id = relatedArticle.ArticleID })" class="text-decoration-none">
+                                @relatedArticle.Title
+                            </a>
+                        </h6>
+                        <small class="text-muted">@relatedArticle.PostedTime.ToString("dd/MM/yyyy")</small>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Phần bình luận -->
+    <div class="comments-section">
+        <h5 class="mb-3">Ý kiến (@ViewBag.Comments.Count)</h5>
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class="mb-3">
+                <form action="@Url.Action("AddComment", "Article")" method="post">
+                    <input type="hidden" name="ArticleID" value="@Model.ArticleID" />
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="CommentContent" placeholder="Chia sẻ ý kiến của bạn..." required>
+                    </div>
+                    <div class="form-group mt-2">
+                        <button type="submit" class="btn btn-primary btn-sm">Gửi</button>
+                    </div>
+                </form>
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-info">
+                <a href="@Url.Action("Index", "Login", new { returnUrl = Url.Action("Index", "Article", new { id = Model.ArticleID }) })">Đăng nhập</a> để bình luận.
+            </div>
+        }
+
+        @foreach (var comment in ViewBag.Comments)
+        {
+            <div class="comment-item mb-3">
+                <strong>@comment.User.FullName</strong> <span class="text-muted">@GetTimeAgo(comment.CommentedTime)</span>
+                <p>@comment.Content</p>
+            </div>
+        }
+    </div>
+</div>
+
+@functions {
+    public string GetTimeAgo(DateTime commentTime)
+    {
+        TimeSpan timeDifference = DateTime.Now - commentTime;
+
+        if (timeDifference.TotalMinutes < 1)
+            return "vừa xong";
+        if (timeDifference.TotalMinutes < 60)
+            return $"{(int)timeDifference.TotalMinutes} phút trước";
+        if (timeDifference.TotalHours < 24)
+            return $"{(int)timeDifference.TotalHours} giờ trước";
+        if (timeDifference.TotalDays < 30)
+            return $"{(int)timeDifference.TotalDays} ngày trước";
+
+        return commentTime.ToString("dd/MM/yyyy");
+    }
+}
+
+

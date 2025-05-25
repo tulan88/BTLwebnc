@@ -1,0 +1,97 @@
+﻿@* Header.cshtml *@
+@using BTLweb.Models
+@inject BTLweb.Services.IHomeService HomeService
+
+<header class="site-header">
+    <link rel="stylesheet" href="~/css/header.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <script src="~/js/header.js"></script>
+
+    <div class="top-bar">
+        <img src="~/image/logo.jpg" alt="News" class="logo" />
+        <span class="today">@DateTime.Now.ToString("dddd, dd/MM/yyyy")</span>
+        <div class="user-actions-wrapper">
+            <div class="user-actions">
+                <!-- Profile section -->
+                <div class="profile-dropdown">
+                    <div class="profile-trigger">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <span class="user-name">@User.Identity.Name</span>
+                            <i class="fa fa-user-circle profile-icon"></i>
+                        }
+                        else
+                        {
+                            <a href="/Login/Index">Đăng nhập</a>
+                        }
+                    </div>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <div class="dropdown-content profile-content">
+                            <a href="/Header/Logout">Đăng xuất</a>
+                        </div>
+                    }
+                </div>
+
+                <!-- Notifications section -->
+                @if (!User.IsInRole("1"))
+                {
+                    <div class="notification-dropdown">
+                        <div class="notification-trigger">
+                            <i class="fa fa-bell notification-icon"></i>
+                            <span class="notification-badge">3</span>
+                        </div>
+                        <div class="dropdown-content notification-content">
+                            <div class="notification-header">Thông báo mới</div>
+                            <div class="notification-item">
+                                <div class="notification-title">Tin mới: Cập nhật COVID-19</div>
+                                <div class="notification-time">10 phút trước</div>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notification-title">Bình luận của bạn đã được phản hồi</div>
+                                <div class="notification-time">2 giờ trước</div>
+                            </div>
+                            <div class="notification-item">
+                                <div class="notification-title">Tin đã lưu có cập nhật mới</div>
+                                <div class="notification-time">Hôm qua</div>
+                            </div>
+                            <a href="/notifications" class="view-all">Xem tất cả</a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <nav class="main-menu">
+        <ul>
+            @if (User.Identity.IsAuthenticated && User.IsInRole("1"))
+            {
+                <li><a href="/Admin/ManageUsers">Quản lý tài khoản</a></li>
+                <li><a href="/Admin/Newsletter">Quản lý Newsletter</a></li>
+            }
+            else
+            {
+                    var categories = await HomeService.GetAllCategoriesAsync();
+                    var selectedCategoryId = Context.Request.Query["categoryId"].ToString();
+
+                <li>
+                    <a class="@(string.IsNullOrEmpty(selectedCategoryId) ? "active-category" : "")" href="/">
+                        Trang chủ
+                    </a>
+                </li>
+
+                @foreach (var category in categories)
+                {
+                    var isActive = selectedCategoryId == category.CategoryID.ToString() ? "active-category" : "";
+                    <li>
+                        <a class="@isActive" href="@Url.Action("Index", "Home", new { categoryId = category.CategoryID })">
+                            @category.CategoryName
+                        </a>
+                    </li>
+                }
+            }
+        </ul>
+    </nav>
+</header>

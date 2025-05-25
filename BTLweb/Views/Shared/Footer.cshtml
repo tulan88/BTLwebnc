@@ -1,0 +1,19 @@
+﻿<!-- Nội dung trang Login/SignUp -->
+@* Footer.cshtml *@
+<footer class="site-footer">
+    <link rel="stylesheet" href="~/css/footer.css" />
+    <script src="~/js/footer.js"></script>
+
+    <section class="newsletter-signup">
+        <p><strong>Đừng bỏ lỡ tin tức quan trọng!</strong></p>
+        <form asp-controller="Newsletter" asp-action="Subscribe" method="post">
+            <input type="email" name="UserEmail" placeholder="Nhập email của bạn" required />
+            <button type="submit">Đăng ký</button>
+        </form>
+    </section>
+
+    <section class="footer-info">
+        <p>&copy; 2025 - Breaking News. Tất cả bản quyền thuộc Nguyễn Thị Tú Lan.</p>
+        <p>Liên hệ: BreakingNews@news.com</p>
+    </section>
+</footer>

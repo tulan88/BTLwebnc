@@ -1,0 +1,25 @@
+﻿.site-footer {
+    background: #eee;
+    padding: 20px;
+    font-size: 14px;
+    color: #444;
+    margin-top: 40px;
+}
+
+.newsletter-signup {
+    margin-bottom: 15px;
+}
+
+    .newsletter-signup input {
+        padding: 5px;
+        width: 250px;
+    }
+
+    .newsletter-signup button {
+        padding: 5px 10px;
+    }
+
+.footer-info {
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}

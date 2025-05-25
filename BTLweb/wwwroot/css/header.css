@@ -1,0 +1,200 @@
+﻿@import url('header.css');
+.site-header {
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.top-bar {
+    display: flex;
+    flex-direction: column; /* chuyển top-bar thành dọc */
+    align-items: flex-start;
+    padding: 10px 20px;
+}
+
+/* Highlight category being selected */
+.active-category {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #007bff !important;
+}
+
+
+.logo {
+    height: 40px;
+}
+
+.today {
+    font-size: 14px;
+    color: #555;
+}
+
+.main-menu {
+    width: 100%;
+    border-top: 1px solid #eee;
+}
+
+
+.main-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    padding: 10px 20px;
+    margin: 0;
+}
+
+.main-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+    .main-menu a:hover {
+        color: #0066cc;
+    }
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.profile-dropdown, .notification-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-trigger, .notification-trigger {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+    .profile-trigger:hover, .notification-trigger:hover {
+        background-color: #eee;
+    }
+
+.user-name {
+    margin-right: 8px;
+    font-size: 14px;
+    color: #333;
+}
+
+.profile-icon {
+    font-size: 24px;
+    color: #555;
+}
+
+.notification-icon {
+    font-size: 20px;
+    color: #555;
+    position: relative;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff4444;
+    color: white;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 250px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.profile-content {
+    width: 150px;
+}
+
+.notification-content {
+    width: 300px;
+}
+
+.profile-dropdown:hover .dropdown-content,
+.notification-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+    .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+.notification-header {
+    padding: 8px 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 5px;
+}
+
+.notification-item {
+    padding: 8px 16px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.notification-title {
+    font-size: 14px;
+    margin-bottom: 3px;
+}
+
+.notification-time {
+    font-size: 12px;
+    color: #888;
+}
+
+.view-all {
+    text-align: center;
+    font-size: 13px;
+    color: #0066cc !important;
+    margin-top: 5px;
+}
+
+/* Đảm bảo user-actions không vỡ bố cục khi thiếu notification */
+.user-actions > * {
+    display: flex;
+    align-items: center;
+}
+
+/* Căn giữa user-actions khi chỉ còn profile (không có notification) */
+.user-actions:only-child,
+.user-actions > .profile-dropdown:only-child {
+    justify-content: flex-end;
+}
+
+/* Fix lỗi layout khi notification bị ẩn */
+.user-actions {
+    min-width: 150px; /* tuỳ chỉnh nếu cần */
+}
+
+.user-actions-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+}

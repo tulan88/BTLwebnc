@@ -1,0 +1,93 @@
+﻿@model BTLweb.ViewModels.HomeViewModel
+@{
+    ViewData["Title"] = "Trang chủ";
+    var userRole = Context.Session?.GetInt32("Role") ?? 0; // Thêm dấu ? để kiểm tra null
+}
+<link rel="stylesheet" href="~/css/home.css" asp-append-version="true" />
+
+<div class="container mt-2">
+    <div class="d-flex justify-content-between align-items-center">
+        <button id="showCookiesBtn" class="btn btn-info btn-sm">Xem thông tin Cookies</button>
+
+        @if (userRole == 1) // Chỉ hiển thị nút quản lý cho admin
+        {
+            <a href="@Url.Action("Index", "Thi")" class="btn btn-primary btn-sm">
+                <i class="fas fa-users-cog"></i> Quản lý Người dùng
+            </a>
+        }
+    </div>
+
+    <div id="cookieInfo" class="mt-2" style="display:none;">
+        <p><strong>Thời gian truy cập gần nhất:</strong> <span id="lastAccessTime">@Model.LastAccessTime</span></p>
+    </div>
+</div>
+
+<div class="container mt-4">
+    <div class="row">
+        <!-- Tin chính -->
+        <div class="col-md-8">
+            @if (Model.FeaturedArticle != null)
+            {
+                <div class="card mb-4">
+                    <a href="@Url.Action("Index", "Article", new { id = Model.FeaturedArticle.ArticleID })">
+                        <img src="@Url.Content(Model.FeaturedArticle.ImageURL)" class="card-img-top" alt="@Model.FeaturedArticle.Title">
+                        <div class="card-body">
+                            <h5 class="card-title">@Model.FeaturedArticle.Title</h5>
+                            <p class="card-text">
+                                @Model.FeaturedArticle.Content.Substring(0, Math.Min(Model.FeaturedArticle.Content.Length, 200))...
+                            </p>
+                            <small class="text-muted">@Model.FeaturedArticle.PostedTime.ToString("dd/MM/yyyy HH:mm")</small>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+
+        <!-- Cột phải: tin nổi bật -->
+        <div class="col-md-4">
+            @foreach (var article in Model.HighlightArticles)
+            {
+                <div class="mb-3 d-flex">
+                    <a href="@Url.Action("Index", "Article", new { id = article.ArticleID })">
+                        <img src="~/@article.ImageURL" alt="@article.Title" class="me-2" width="100">
+                        <div>
+                            <h6>@article.Title</h6>
+                            <small class="text-muted">@article.PostedTime.ToString("dd/MM/yyyy")</small>
+                        </div>
+                    </a>
+                </div>
+            }
+        </div>
+    </div>
+
+    <!-- Danh sách tin tức -->
+    <div class="row mt-4">
+        @foreach (var article in Model.LatestArticles)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <a href="@Url.Action("Index", "Article", new { id = article.ArticleID })">
+                        <img src="@article.ImageURL" class="card-img-top" alt="@article.Title">
+                        <div class="card-body">
+                            <h6 class="card-title">@article.Title</h6>
+                            <small class="text-muted">@article.PostedTime.ToString("dd/MM/yyyy")</small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById('showCookiesBtn').addEventListener('click', function() {
+            const cookieInfo = document.getElementById('cookieInfo');
+            if (cookieInfo.style.display === 'none') {
+                cookieInfo.style.display = 'block';
+            } else {
+                cookieInfo.style.display = 'none';
+            }
+        });
+    </script>
+}
